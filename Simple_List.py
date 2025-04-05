@@ -11,3 +11,8 @@ CREATE TABLE IF NOT EXISTS users(
 )
 """)
 conn.commit()
+
+users=[("Bob",30),("Charlie",2)]
+
+cursor.executemany("INSERT INTO users(name,age) VALUES (? ,?)",users)
+conn.commit()
