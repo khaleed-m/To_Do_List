@@ -21,3 +21,6 @@ cursor.execute("SELECT * FROM users")
 rows=cursor.fetchall()
 for i in rows:
     print(i)
+
+
+conn.close()
