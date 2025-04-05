@@ -16,3 +16,8 @@ users=[("Bob",30),("Charlie",2)]
 
 cursor.executemany("INSERT INTO users(name,age) VALUES (? ,?)",users)
 conn.commit()
+
+cursor.execute("SELECT * FROM users")
+rows=cursor.fetchall()
+for i in rows:
+    print(i)
