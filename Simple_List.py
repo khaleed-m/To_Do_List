@@ -34,3 +34,8 @@ conn.close()
 
 conn=sqlite3.connect("my_database.db")
 cursor=conn.cursor()
+
+cursor.execute("SELECT * FROM users")
+rows=cursor.fetchall()
+for i in rows:
+    print(i)
