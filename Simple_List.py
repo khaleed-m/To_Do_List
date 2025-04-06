@@ -24,3 +24,6 @@ for i in rows:
 
 
 conn.close()
+
+conn=sqlite3.connect("my_database.db")
+cursor=conn.cursor()
