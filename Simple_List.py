@@ -31,3 +31,6 @@ cursor=conn.cursor()
 cursor.execute("INSERT INTO users(name,age)VALUES(?,?)",("Alexis",42))
 conn.commit()
 conn.close()
+
+conn=sqlite3.connect("my_database.db")
+cursor=conn.cursor()
