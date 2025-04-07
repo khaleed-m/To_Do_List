@@ -9,3 +9,10 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS tasks(
     status TEXT
 )""")
 conn.commit()
+
+
+
+# Add tasks
+# View tasks
+# complete tasks
+# Delete tasks
