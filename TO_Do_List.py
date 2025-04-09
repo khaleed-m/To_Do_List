@@ -37,3 +37,23 @@ def view_tasks():
             print(f"[{i[0]}] [{i[1]}] [{i[2]}]")
     else:
         print("\n No tasks found")
+
+def complete_task():
+    view_tasks()
+    try:
+        task_id=int(input("\nEnter the taskID you want to mark as complete: "))
+        cursor.execute("UPDATE tasks SET status='Completed' WHERE id=?",(task_id,))
+        conn.commit()
+        print(f"Task {task_id} marked as Complete!")
+    except ValueError:
+        print("Invalid TaskID.")
+
+def delete_task():
+    view_tasks()
+    try:
+        task_id=int(input("\nEnter the taskID you want to delete: "))
+        cursor.execute("DELETE FROM tasks WHERE id=?",(task_id,))
+        conn.commit()
+        print(f"Task {task_id} deleted successfully!")
+    except ValueError:
+        print("Invalid TaskID.")
