@@ -17,3 +17,13 @@ conn.commit()
 # complete tasks
 # Delete tasks
 
+def add_task():
+    task=input("Enter task: ").strip()
+    if task:
+        cursor.execute("INSERT INTO tasks(task,status) VALUES(?,?)",
+                       (task,"pending"))
+        conn.commit()
+        print(f"Task '{task}' added successfully!")
+    else:
+        print("Task cannot be empty")
+        
